@@ -67,6 +67,26 @@ def search(request):
     
     return render(request, 'search_result.html', {'query': query, 'results': results})
 
+def user_properties(request):
+    # Ensure the user is authenticated
+    if request.user.is_authenticated:
+        # Retrieve properties belonging to the current user
+        properties = HomeDetails.objects.filter(owner=request.user)
+        # Pass the properties to the template for rendering
+        return render(request, 'browse.html', {'properties': properties})
+    else:
+        # Redirect or show an error if the user is not logged in
+        return redirect('login_page')
+    
+
+def delete(request,pk):
+    instance = HomeDetails.objects.get(pk=pk)
+    instance.delete()
+    data_set = HomeDetails.objects.all() 
+    return render(request,'browse.html',{'data':data_set})
+    
+
+
 # from .models import Owner
 # from django.contrib.auth.models import User
 
@@ -78,3 +98,4 @@ def search(request):
     #     'properties':properties,
     # }
     # return render(request, 'browse.html', context)
+    
