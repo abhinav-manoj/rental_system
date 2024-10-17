@@ -438,3 +438,27 @@
     padding-right: 0;
     border-right: none;
 }
+.form1 label{
+    color: black;
+    font-weight: 500;
+    
+}
+.form1 input{
+    border: #00B98E solid 1px;
+    border-radius: 3px;
+    width: 100%;
+    
+    
+    
+}
+.form1  textarea{
+    border: #00B98E solid 1px;
+    border-radius: 3px;
+    width: 100%;
+
+}
+.form1 img{
+    border: 0;
+    width: 100%;
+
+}

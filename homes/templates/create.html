@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <title>Add Property</title>
+</head>
+<body class="p-2" style="height: 100vh; color: white;">
+    <div class="container d-flex justify-content-center" style="height: 100vh; ">
+        <div class="main  px-3 " style="width: 50%; height: 100%;  border-radius: .5em; border: 1px solid #00B98E;">
+            
+            <form method="post" class="form1 text-center d-flex flex-column justify-content-evenly g-2" style="height: 100%;" enctype="multipart/form-data">
+                {%csrf_token%}
+            <p style=" padding: 0; font-weight: 600; font-size: larger; color: #00B98E;">Property Details</p>
+            <label  for="">Owner Name</label>
+            <input type="text" name="owner_name" placeholder="Owner name">
+            <label for="">Description</label>
+            <textarea style="border-radius: 3px; border: #00B98E 1px solid;" cols="" rows="" name="description" id=""></textarea>
+            <label  for="">Location</label>
+            <input type="text" name="location" placeholder="">
+            <label for="">Price Per Month</label>
+            <input type="number" name="price_per_month">
+            <label for="">Number of Bedrooms</label>
+            <input type="number" name="number_of_bedrooms">
+            <label for="">Number of Bathrooms</label>
+            <input type="number" name="number_of_bathrooms">
+            <label for="">Square Footage</label>
+            <input type="number" name="square_footage">
+            <label for="">Availble From</label>
+            <input type="date"  name="available_from" placeholder="YYYY-MM-DD">
+            <label for="">Add Image</label>
+            
+            <input type="submit" style="  background-color: #00B98E; color: white;  border-radius: .5em;">
+            </form>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

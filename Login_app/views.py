@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def sign_up(request):
@@ -20,13 +21,17 @@ def login_page(request):
         user = authenticate(username=username,password=password)
         if user is not None:
             login(request,user)
-            return redirect('view')
+            return redirect('create')
         else:
             error_message="Invalid Credentials"
 
     return render(request,'login_page.html',{'error_message':error_message})
 
-def view(request):
+def logout_page(request):
+    logout(request)
+    return redirect('login_page')
 
-    return render(request,'view.html')
+
+# def create(request):
+#     return render(request,'create2.html')
     
